@@ -1,0 +1,19 @@
+- user = @item.user
+.page-header.itemShowHeader
+  .container
+    .row
+      .col-sm-9
+        %h1.title
+          = @item.title
+        .message
+          %span.userName= link_to user.name, user
+          = "が#{@item.published_at.to_date}に投稿しました"
+        - if current_user == @item.user
+          %ul.itemEditorMenus.clearfix
+            %li= link_to '投稿を編集', edit_user_item_path(current_user, @item), class: 'btn btn-default'
+            %li= link_to '削除', user_item_path(current_user, @item), method: :delete, class: 'btn btn-danger'
+
+      //.col-sm-3
+        //.itemShowHeaderStock
+
+
