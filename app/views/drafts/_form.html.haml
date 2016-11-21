@@ -3,7 +3,7 @@
     = f.input :title, placeholder: 'タイトル', label: false, autofocus: true
 
     .row.col-sm-12
-      = f.input :content, placeholder: '本文', label: false, input_html: { rows: 20 }, wrapper_html: { class: "col-sm-6" }
+      //= f.input :content, placeholder: '本文',
       #markdown-preview.preview-content.col-sm-6
         = markdown(@draft.content)
     .row.col-sm-12
